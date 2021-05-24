@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+
+  <!--odkaz na CSS soubor-->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper__outer">
+    <!--sekce Hlavička-->
+    <header class="header">
+      <div class="header__arrangement">
+        <div class="header__logo">
+        <a href="/">ÚTULEK ŠŤASTNÉ TLAPKY</a></div>
+
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="/onas/" class="menu__link">O NÁS</a>
+            </li>
+            <li class="menu__item">
+              <a href="/kadopci/" class="menu__link">K ADOPCI</a>
+            </li>
+              <li class="menu__item"><a href="/aktuality/" class="menu__link">AKTUALITY</a></li>
+            <li class="menu__item">
+              <a href="/kontakt/" class="menu__link">KONTAKT</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--konec--> 
+
+    {{ content | safe }}
+
+    <!--Patička-->
+    <footer class="footer">
+      <!--Copywright-->
+      <div class="footer__copyright">&copy; ÚTULEK ŠŤASTNÉ TLAPKY, 2021</div>
+      <!--konec-->
+
+      <!--Sociální sítě-->
+      <div class="footer__networks">
+        <div class="footer__item">
+          <a href="https://www.facebook.com"><img class="networks__logo" src="/images/logos/facebook.svg" alt="Facebook"></a>
+        </div>
+
+        <div class="footer__item">
+          <a href="https://www.twitter.com"><img class="networks__logo" src="/images/logos/twitter.svg" alt="Twitter"></a>
+        </div>
+
+        <div class="footer__item">
+          <a href="https://www.youtube.com"><img class="networks__logo" src="/images/logos/youtube.svg" alt="YouTube"></a>
+        </div>
+      </div>
+      <!--konec-->
+    </footer>
+    <!--konec-->
+    
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+---
+layout: layouts/main.njk
+---
+{% include 'partials/header-image.njk' %}
+<main class="main">
+  <div class="wrapper__inner">
+    <!-- sekce Aktuality -->
+    <div class="two-third">
+      <section class="news">
+        <h1>AKTUALITY</h1>
+        <div class="article">
+          <h2 class="article__title">{{title}}</h2>
+          <p class="article__meta"> Publikováno: {{ page.date.toLocaleString('cs-CZ') }}</p>
+          <div class="article__content">
+            <div class="article__text">
+              <p class="article__perex">{{ perex }}</p>
+              {{ content | safe}}
+            <div>
+          </div>
+        </div>
+      </section>
+      <section class="article__image">
+        <div class="article__image--grid">
+          <div class="grid__column">
+            <img class="article__image" src="/images/news/{{ image1 }}" alt="{{ alt1 }}" />
+          </div>
+          <div class="grid__column">
+            <img class="article__image" src="/images/news/{{ image2 }}" alt="{{ alt2 }}" />
+          </div>
+          <div class="grid__column">
+            <img class="article__image" src="/images/news/{{ image3 }}" alt="{{ alt3 }}" />
+          </div>
+          <div class="grid__column">
+            <img class="article__image" src="/images/news/{{ image4 }}" alt="{{ alt4 }}" />
+          </div>
+        </div>
+      </section>
+      <!--konec-->
+    </div>
+    <div class="one-third">
+      <!-- sekce Přehled článků -->
+      <section class="news__articles">
+        <h1>PŘEHLED ČLÁNKŮ</h1>
+        <div class="news__articles--overview">
+          {%for prispevek in collections.aktuality | reverse %}
+            <h2>{{ prispevek.data.title}}</h2>
+            <p>{{ prispevek.data.date }}</p>
+            <p>{{ prispevek.data.perex }}</p>
+            <p><a href="{{ prispevek.url }}">celý článek</a></p>
+          {% endfor %}
+        </div>
+      </section>
+      <!--konec-->
+    </div>
+  </div>
+</main>

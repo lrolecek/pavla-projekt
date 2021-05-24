@@ -1,0 +1,499 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+/*Root*/
+:root {
+  --c-primary: rgb(252,247,248);
+  --c-secondary:rgb(204, 166, 125);
+  --c-section: rgb(250, 232, 212);
+  --c-accent: #523726;
+  --c-inverse: white;
+  --f-default:"Tahoma", sans-serif;
+  --f-weight: bold;
+  --f-h1: 22px;
+  --f-h2: 18px;
+}
+
+/*------------------------------------------------------*/
+body {
+  margin: 0;
+  font-family: var(--f-default);
+  background-image: linear-gradient(to right, var(--c-primary) 25%, var(--c-secondary) 85%);
+  color: var(--c-accent);
+}
+
+.wrapper__outer {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+h1, h2 {
+  font-family: var(--f-default);
+  font-weight: var(--f-weight);
+  color: var(--c-accent);
+}
+
+h1 {
+  font-size: var(--f-h1);
+  padding-left: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: var(--f-h2);
+}
+
+img {
+  width: 100%;
+  border-radius: 20px 20px 20px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* Menu */
+.header__logo {
+  font-size: var(--f-h1);
+  font-weight: var(--f-weight);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 13px;
+}
+
+.header__logo a {
+  text-decoration: none;
+  color: var(--c-secondary);
+}
+
+.menu__checkbox {
+  position: absolute;
+  left: 9999px;
+}
+
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--c-inverse);
+}
+
+.menu__link {
+  display: block;
+  padding: 15px 15px;
+  font-size: 20px;
+  font-weight: var(--f-weight);
+  text-decoration: none;
+  color: var(--c-accent);
+}
+
+.menu__link:hover {
+  color: var(--c-inverse);
+  background-color: var(--c-accent);
+}
+
+/***************************************
+HOMEPAGE
+***************************************/
+/*Header image*/
+.header__headerimage {
+  background-image: url(images/photos/header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 40px;
+}
+
+/*sekce HP about*/
+.hpabout__content {
+  margin: 0;
+  width: 100%;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+.hpabout__text {
+  font-size: 16px;
+  width: 100%;
+}
+
+.inner__column {
+  text-align: center;
+  width: 100%;
+}
+
+.hpabout__image {
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+
+.button_vice {
+  background-color: var(--c-accent);
+  border-radius: 20px 20px 20px 20px;
+  width: 30%;
+  padding: 5px 0 5px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button_vice a {
+  color: var(--c-inverse);
+  font-weight: var(--f-weight);
+  text-decoration: none;
+}
+
+/*sekce Nejnovější pejsci/kočky k adopci*/
+.hpdog__overview,
+.hpcat__overview {
+  width: 100%;
+}
+
+.hpdog__overview--grid,
+.hpcat__overview--grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dog__image,
+.cat__image {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.grid__column {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo__description {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--c-inverse);
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.photo__descrition p {
+  margin: 0;
+}
+
+.photo__description a {
+  color: var(--c-inverse);
+}
+
+.grid__column:hover .photo__description {
+  transform: translateY(-100%);
+}
+
+.grid__column:hover .dog__image,
+.grid__column:hover .cat__image {
+  transform: scale(1.1);
+}
+
+/*sekce Aktuality*/
+.hpnews__overview {
+  margin: 0;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+/***************************************
+O NÁS
+***************************************/
+.about__text,
+.about__help--text,
+.sponsors__overview--grid {
+  margin: 0;
+  width: 100%;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+}
+
+.about__image {
+  width: 100%;
+}
+
+.about__image--grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*Table*/
+.about__walkies--table {
+  width: 100%;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+}
+
+.about__walkies--table table {
+  border-spacing: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about__walkies--table th,
+.about__walkies--table td {
+  text-align: left;
+}
+
+.about__walkies--hours {
+  padding-left: 20px;
+}
+
+/* Sponsors*/
+.about__sponsors {
+  text-align: center;
+}
+
+.sponsor__logo {
+  width: 65%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/***************************************
+K ADOPCI
+***************************************/
+/* Fotogalerie*/
+.adoption__dog--overview,
+.adoption__cat--overview {
+  width: 100%;
+}
+
+.dog__overview--grid,
+.cat__overview--grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.adoption__text {
+  margin: 0;
+}
+
+/* Detail zvířete*/
+.adoption__detail--overview {
+  width: 100%;
+}
+
+.detail__overview--grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*Table*/
+.adoption__text,
+.adoption__details--table {
+  width: 100%;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+}
+
+.adoption__details--table table {
+  border-spacing: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.adoption__details--table th,
+.adoption__details--table td {
+  text-align: left;
+}
+
+.adoption__response {
+  padding-left: 20px;
+}
+
+/***************************************
+AKTUALITY
+***************************************/
+.article,
+.news__articles--overview {
+  margin: 0;
+  width: 100%;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+}
+
+.article__image {
+  width: 100%;
+}
+
+.article__image--grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/***************************************
+KONTAKTY
+***************************************/
+.contact__address,
+.contact__hours--table,
+.contact__wheretofind--text {
+  margin: 0;
+  background-color: var(--c-section);
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+}
+
+.contact__wheretofind--text {
+  width: 100%;
+}
+
+.contact__hours--table table {
+  border-spacing: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contact__hours--table th,
+.contact__hours--table td {
+  text-align: left;
+}
+
+.contact__hours--hours {
+  padding-left: 20px;
+}
+
+/*Mapa*/
+.map {
+  padding: 0;
+}
+
+/***************************************
+FOOTER
+***************************************/
+.footer {
+  background-color: var(--c-accent);
+  border-radius: 20px 20px 0 0;
+}
+
+.footer__copyright {
+  font-size: 18px;
+  color: var(--c-inverse);
+  font-weight: var(--f-weight);
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.footer__networks {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__item {
+  margin: 0 5px 20px 5px;
+}
+
+.networks__logo {
+  width: 50px;
+  height: 50px;
+}
+
+/******************************
+MEDIA SCREEN 900PX
+********************************/
+@media screen and (min-width: 900px) {
+  .header__arrangement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__logo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .menu__list {
+    display: flex;
+  }
+
+  .menu__item {
+    border-bottom: 0;
+  }
+
+  .hpabout__content {
+    display: flex;
+  }
+
+  .hpabout__text {
+    font-size: 16px;
+    width: 50%;
+  }
+
+  .inner__column {
+    text-align: center;
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .hpabout__image {
+    width: 100%;
+  }
+
+  .wrapper__inner,
+.wrapper__contact {
+    display: flex;
+    gap: 20px;
+  }
+
+  .two-third {
+    width: 65%;
+  }
+
+  .one-third {
+    width: 35%;
+  }
+
+  .contact__shelter1 {
+    width: 40%;
+  }
+
+  .contact__shelter2 {
+    width: 60%;
+  }
+
+  .contact__image {
+    margin-top: 38px;
+  }
+}/*# sourceMappingURL=style.css.map */

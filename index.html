@@ -1,0 +1,131 @@
+---
+layout: layouts/main.njk
+title: Útulek Šťastné tlapky
+---
+{% include 'partials/header-image.njk' %}
+<main class="main">
+  <div class="wrapper__inner"> 
+    <!-- sekce O nás -->
+    <div class="two-third">
+      <section class="hpabout">
+        <h1>O NÁS</h1>
+        <div class="hpabout__content">
+          <div class="hpabout__text">
+            <p>
+              Osmi potvrzuje češi ráj legendy hmatatelný roste. Listu dvacetimetrové klidně ji frekvence map okolo ven,
+              podobu potřebné pozměněné. Té naši svůj dá slovy dobrovolníků obličeje u podnebí trénují bojem.
+              Tutanchamónovy důsledkem, to OSN o bohužel jasně k začala výrazně. Skotu zní mj. textech jich ne ekonomické
+              ze kritických nevrátí po řekl.
+            </p>
+            <p>
+              Živin ty by vám okolností použitelnost prstence s i pán vylepšování kulturních nadaci, velká poslechnout
+              provincií zájmy dala respirátorem prací.
+            </p>
+          </div>
+          
+          <div class="inner__column">
+            <div class="hpabout__image">
+              <img src="/images/photos/shelter1.jpg" alt="Útulek 1" />
+            </div>
+
+            <div class="hpabout__button">
+              <button class="button_vice">
+                <a href="/onas/">Více</a>
+              </button>
+            </div>
+          </div>
+        </div>        
+      </section>
+      <!--konec-->
+
+      <!--sekce Nejnovější pejsci k adopci -->
+      <section class="hpdog__overview">
+        <h1>NEJNOVĚJŠÍ PEJSCI K ADOPCI</h1>
+        <div class="hpdog__overview--grid">
+          <div class="grid__column">
+            <img class="dog__image" src="/images/animal_small/dog1_small.jpg" alt="Dusty">
+            <div class="photo__description">
+              <p class="photo__title"><a href="/kadopci/#animal_detail">Dusty</a></p>
+            </div>  
+          </div>
+
+          <div class="grid__column">
+            <img class="dog__image" src="/images/animal_small/dog2_small.jpg" alt="Flíček">
+            <div class="photo__description">
+              <p class="photo__title"><a>Flíček</a></p>
+            </div>  
+          </div>
+
+          <div class="grid__column">
+            <img class="dog__image" src="/images/animal_small/dog3_small.jpg" alt="Bluma">
+            <div class="photo__description">
+              <p class="photo__title"><a>Bluma</a></p>
+            </div>  
+          </div>
+
+          <div class="grid__column">
+            <img class="dog__image" src="/images/animal_small/dog4_small.jpg" alt="Sára" />
+            <div class="photo__description">
+              <p class="photo__title"><a>Sára</a></p>
+            </div>  
+          </div>
+        </div>  
+      </section>
+      <!--konec-->
+
+      <!-- sekce Nejnovější kočky k adopci -->
+      <section class="hpcat__overview">
+        <h1>NEJNOVĚJŠÍ KOČKY K ADOPCI</h1>
+        <div class="hpcat__overview--grid">
+          <div class="grid__column">
+            <img class="cat__image" src="/images/animal_small/cat1_small.jpg" alt="Margot" />
+            <div class="photo__description">
+              <p class="photo__title"><a>Margot</a></p>
+            </div>  
+          </div>
+
+          <div class="grid__column">
+            <img class="cat__image" src="/images/animal_small/cat2_small.jpg" alt="Eliza" />
+            <div class="photo__description">
+              <p class="photo__title"><a>Eliza</a></p>
+            </div>  
+          </div>
+
+          <div class="grid__column">
+            <img class="cat__image" src="/images/animal_small/cat3_small.jpg" alt="Cherry" />
+            <div class="photo__description">
+              <p class="photo__title"><a>Cherry</a></p>
+            </div>  
+          </div>
+
+          <div class="grid__column">
+            <img class="cat__image" src="/images/animal_small/cat4_small.jpg" alt="Kvík" />
+            <div class="photo__description">
+              <p class="photo__title"><a>Kvík</a></p>
+            </div>  
+          </div>
+        </div>
+      </section>
+      <!--konec-->
+    </div>
+    
+    <div class="one-third">
+      <!-- sekce Aktuality -->
+      <section class="hpnews">
+        <h1>AKTUALITY</h1>
+        <div class="hpnews__overview">
+          {%for prispevek in collections.homepage | reverse %}
+          
+            <h2>{{ prispevek.data.title}}</h2>
+            <p>{{ prispevek.data.date }}</p>
+            <p>{{ prispevek.data.perex }}</p>
+            <p><a href="{{ prispevek.url }}">celý článek</a></p>
+
+          {% endfor %}
+        </div>
+      </section>
+      <!--konec-->
+
+    </div>
+  </div>
+</main>
